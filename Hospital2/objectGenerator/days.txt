@@ -1,0 +1,7 @@
+Monday,6,17
+Tuesday,8,16
+Wednesday,6,16
+Thursday,6,16
+Friday,8,17
+Saturday,8,14
+Sunday,8,14
