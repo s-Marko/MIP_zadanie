@@ -1,14 +1,4 @@
 [
-  /*
-  {
-    "name":,
-    "weight":,
-    "symptomps":[
-  ],
-    "messages":[
-  ]
-  },
-  */
   {
     "name": "Common cold",
     "weight": 50,
@@ -22,14 +12,17 @@
       "The doctor advises to rest in bed and drink lots of water.",
       "Doctor prescribed the patient medication to ease the cough."
     ]
+  }, 
+  {
+    "name": "Inflamed tonsils",
+    "weight": 15
   },
   {
-    "name": "Peanut allergy",
-    "weight": 10,
-    "symptomps": [
-      "Stuffy nose",
-      "Inflamed Throat",
-      "Skin rash"
-    ]
+    "name": "Chicken pox",
+    "weight": 10
+  },
+  {
+    "name": "Hepatitis",
+    "weight": 5
   }
 ]
