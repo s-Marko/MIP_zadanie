@@ -2,9 +2,16 @@ package models;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
 
 public class Disease {
     private String name;
@@ -28,22 +35,24 @@ public class Disease {
         return this.name;
     }
 
+    //// Main constructor, reads information from external JSON file and generates Objects into private arrayList. 
     public Disease() {
+    	JSONParser parser = new JSONParser();
         try {
-            File diseaseFile = new File("objectGenerator/disease.txt");
-            Scanner scanner = new Scanner(diseaseFile);
-            String[] line;
-            int weightIns;
-            while (scanner.hasNextLine()) {
-                line = scanner.nextLine().split(",", 2);
-                weightIns = Integer.parseInt(line[1]);
-                combinedWeight += weightIns;
-                diseases.add(new Disease(line[0], weightIns));
+            Reader reader = new FileReader("objectGenerator/disease.json");
+            JSONObject json = (JSONObject) parser.parse(reader);
+            JSONArray diseaseJson = (JSONArray) json.get("disease");
+            for (Object value : diseaseJson) {
+            	JSONObject o = (JSONObject) value;
+            	int oWeight = ((Long)o.get("weight")).intValue();
+            	diseases.add(new Disease( (String)o.get("name"), oWeight ) );
+            	combinedWeight += oWeight;
             }
-            scanner.close();
-        }
-        catch (FileNotFoundException e) {
-            System.out.println("File not Found - " + e);
+            
+          
+
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

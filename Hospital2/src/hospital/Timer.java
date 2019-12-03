@@ -21,7 +21,7 @@ public class Timer extends Thread{
 			this.day = day;
 			int duration = day.getClosingHour() - day.getOpeningHour();
 			this.time = duration * 60;
-			this.interval = 5;			
+			this.interval = 5;
 		}
 		else {
 			System.out.println("You shouldn't see this.");
