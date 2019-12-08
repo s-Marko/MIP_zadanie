@@ -4,15 +4,15 @@ import java.util.Random;
 
 import com.github.javafaker.Faker;
 
-public class Person {
+abstract class Person {
 	private String firstName;
 	private String middleName = "";
 	private String lastName;
 	private int age;
 	
-    public int getAge() { return this.age; }
+    public final int getAge() { return this.age; }
     
-    public String getName() { 
+    public final String getName() { 
     	if ( middleName != "" )
     		return (this.firstName + " " +  this.middleName + " " + this.lastName);
     	return (this.firstName + " " + this.lastName); 
