@@ -96,7 +96,7 @@ public class World extends Thread{
 					}
 					if (!this.patients().isEmpty()) {
 						Patient activePatient = this.patients().get(0);
-						this.doctor().interact(activePatient);
+						this.doctor().diagnose(activePatient);
 						this.removePatient(activePatient);
 					}
 					sleep(1000);

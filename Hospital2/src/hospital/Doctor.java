@@ -4,13 +4,13 @@ import java.util.Random;
 
 import models.Event;
 
-public class Doctor extends Person{
+public class Doctor extends Person implements Diagnose{
 
 	public Doctor() {
 		super(55);
 	}
 	
-	public void interact(Patient patient) throws InterruptedException {
+	public void diagnose(Patient patient) throws InterruptedException {
 		Random random = new Random();
 		Event.fireEvent("Doctor is starting to diagnose " + patient.getName() + ".");
 		Event.fireEvent(patient.getName() + " is diagnosed with " + patient.getDisease().getName() + ".");
@@ -37,9 +37,8 @@ public class Doctor extends Person{
 		System.out.println("");
 	}
 
-	@Override
-	public void interact(Person person) {
-		// TODO Auto-generated method stub
+	public void interact(Object o) {
+		System.out.println("Interacting with " + o.getClass() + " object.");
 		
 	}
 }

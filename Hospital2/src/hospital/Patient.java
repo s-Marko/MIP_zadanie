@@ -56,7 +56,7 @@ public class Patient extends Person{
         this.health = generateHealth();
     }
 	@Override
-	public void interact(Person person) {
+	public void interact(Object o) {
 		/// this method should never get called
 		System.out.println("I can't interact with anything...");
 	}    
