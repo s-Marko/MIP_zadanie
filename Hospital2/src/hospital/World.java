@@ -98,7 +98,7 @@ public class World extends Thread{
 						Patient activePatient = this.patients().get(0);
 						this.doctor().diagnose(activePatient);
 						this.removePatient(activePatient);
-					}
+					}					
 					sleep(1000);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
