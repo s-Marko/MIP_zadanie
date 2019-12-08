@@ -7,7 +7,6 @@ import java.util.Random;
 import java.util.Scanner;
 
 import models.Disease;
-import models.Event;
 import models.Trait;
 
 public class World extends Thread{
