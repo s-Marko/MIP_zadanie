@@ -10,7 +10,7 @@ public class Doctor extends Person{
 		super(55);
 	}
 	
-	public void diagnose(Patient patient) throws InterruptedException {
+	public void interact(Patient patient) throws InterruptedException {
 		Random random = new Random();
 		Event.fireEvent("Doctor is starting to diagnose " + patient.getName() + ".");
 		Event.fireEvent(patient.getName() + " is diagnosed with " + patient.getDisease().getName() + ".");
@@ -35,5 +35,11 @@ public class Doctor extends Person{
 		}		
 		Event.fireEvent(patient.getFirstName() + " is leaving the ambulance.");
 		System.out.println("");
+	}
+
+	@Override
+	public void interact(Person person) {
+		// TODO Auto-generated method stub
+		
 	}
 }

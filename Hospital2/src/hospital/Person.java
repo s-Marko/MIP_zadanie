@@ -22,9 +22,7 @@ abstract class Person {
     	return this.firstName;
     }
     
-    public void interact(Person person) {
-    	;
-    }
+    public abstract void interact(Person person);
     
     public boolean equals(Object o) {
 		if (o == null) return false;

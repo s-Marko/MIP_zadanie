@@ -54,5 +54,10 @@ public class Patient extends Person{
         this.disease = disease;
         this.traits = traits;
         this.health = generateHealth();
-    }    
+    }
+	@Override
+	public void interact(Person person) {
+		/// this method should never get called
+		System.out.println("I can't interact with anything...");
+	}    
 }
