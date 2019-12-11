@@ -4,7 +4,7 @@ import java.util.Random;
 
 import models.Event;
 
-public class Doctor extends Person{
+public class Doctor extends Person implements Diagnose{
 
 	public Doctor() {
 		super(55);
@@ -35,5 +35,10 @@ public class Doctor extends Person{
 		}		
 		Event.fireEvent(patient.getFirstName() + " is leaving the ambulance.");
 		System.out.println("");
+	}
+
+	public void interact(Object o) {
+		System.out.println("Interacting with " + o.getClass() + " object.");
+		
 	}
 }

@@ -1,18 +1,21 @@
 package hospital;
 
 import java.util.Random;
-
 import com.github.javafaker.Faker;
 
-public class Person {
+interface Diagnose {
+	void diagnose(Patient patient) throws InterruptedException;
+}
+
+abstract class Person {
 	private String firstName;
 	private String middleName = "";
 	private String lastName;
 	private int age;
 	
-    public int getAge() { return this.age; }
+    public final int getAge() { return this.age; }
     
-    public String getName() { 
+    public final String getName() { 
     	if ( middleName != "" )
     		return (this.firstName + " " +  this.middleName + " " + this.lastName);
     	return (this.firstName + " " + this.lastName); 
@@ -22,9 +25,7 @@ public class Person {
     	return this.firstName;
     }
     
-    public void interact(Person person) {
-    	;
-    }
+    public abstract void interact(Object o);
     
     public boolean equals(Object o) {
 		if (o == null) return false;

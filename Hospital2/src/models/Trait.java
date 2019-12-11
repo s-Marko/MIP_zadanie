@@ -27,6 +27,8 @@ public class Trait {
             JSONObject json = (JSONObject) parser.parse(reader);
             JSONArray smokeJson = (JSONArray) json.get("smoke");
             JSONArray exerciseJson = (JSONArray) json.get("exercise");
+            System.out.println(json.get("smoke").getClass());
+            System.out.println(smokeJson.getClass());
 
             for (Object value : smokeJson) {
                 JSONObject o = (JSONObject) value;

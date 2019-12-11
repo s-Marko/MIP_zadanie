@@ -1,12 +1,9 @@
 package models;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Scanner;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -17,7 +14,6 @@ public class Disease {
     private String name;
     private int weight;
     private int combinedWeight = 0;
-    private ArrayList<String> symptoms;			///PH
     private ArrayList<Disease> diseases = new ArrayList<Disease>();
 
 
