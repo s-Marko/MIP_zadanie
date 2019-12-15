@@ -46,7 +46,7 @@ public class Patient extends Person{
         return (int)Math.floor(age);
     }
     
-    public static Patient generatePatient(ContainerObject containerObject, Trait traitObject) {
+    public static Patient generatePatient(ArrayList<ContainerObject> diseaseObject, ArrayList<ContainerObject> traitObject) {
         //return new Patient(generateAge(), containerObject.generateDisease(), traitObject.generateTraits());
     	return null;
     }

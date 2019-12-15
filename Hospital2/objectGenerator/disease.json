@@ -1,42 +1,45 @@
 {
-  "disease": [
-    {
-      "name": "Common cold",
-      "weight": 50,
-      "symptoms": [
-        "Fever",
-        "Fatigue",
-        "Headache",
-        "Cough"
-      ],
-      "messages": [
-        "The doctor advises to rest in bed and drink lots of water.",
-        "Doctor prescribed the patient medication to ease the cough."
-      ]
-    },
-    {
-      "name": "Inflamed tonsils",
-      "weight": 15,
-      "symptoms": [
-      ],
-      "messages": [
-      ]
-    },
-    {
-      "name": "Chicken pox",
-      "weight": 10,
-      "symptoms": [
-      ],
-      "messages": [
-      ]
-    },
-    {
-      "name": "Hepatitis",
-      "weight": 5,
-      "symptoms": [
-      ],
-      "messages": [
-      ]
-    }
-  ]
+  "disease": {
+    "chance": 1.0,
+    "content": [
+      {
+        "name": "Common cold",
+        "weight": 50,
+        "symptoms": [
+          "Fever",
+          "Fatigue",
+          "Headache",
+          "Cough"
+        ],
+        "messages": [
+          "The doctor advises to rest in bed and drink lots of water.",
+          "Doctor prescribed the patient medication to ease the cough."
+        ]
+      },
+      {
+        "name": "Inflamed tonsils",
+        "weight": 15,
+        "symptoms": [
+        ],
+        "messages": [
+        ]
+      },
+      {
+        "name": "Chicken pox",
+        "weight": 10,
+        "symptoms": [
+        ],
+        "messages": [
+        ]
+      },
+      {
+        "name": "Hepatitis",
+        "weight": 5,
+        "symptoms": [
+        ],
+        "messages": [
+        ]
+      }
+    ]    
+  }
 }

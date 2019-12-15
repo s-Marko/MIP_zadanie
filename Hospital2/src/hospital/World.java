@@ -8,14 +8,15 @@ import java.util.Scanner;
 
 import models.ContainerObject;
 import models.Disease;
+import models.ObjectGenerator;
 import models.Trait;
 
 public class World extends Thread{
 	private ArrayList<Patient> patients = new ArrayList<>();
 	private Patient activePatient;
 	private Doctor doctor;
-	private ContainerObject diseaseObject;
-	private Trait traitObject;
+	private ArrayList<ContainerObject> diseaseObject;
+	private ArrayList<ContainerObject> traitObject;
 	
 	boolean running = true;
 	
@@ -36,11 +37,11 @@ public class World extends Thread{
 		return this.patients;
 	}
 	
-	public ContainerObject getDiseaseObject() {
+	public ArrayList<ContainerObject> getDiseaseObject() {
 		return this.diseaseObject;
 	}
 	
-	public Trait getTraitObject() {
+	public ArrayList<ContainerObject> getTraitObject() {
 		return this.traitObject;
 	}
 	
@@ -112,8 +113,8 @@ public class World extends Thread{
 	
 	public World() {
 		initializeWeek();
-		//this.diseaseObject = new ContainerObject();
-		this.traitObject = new Trait();
+		this.diseaseObject = ObjectGenerator.generate("objectGenerator/disease.json");
+		this.traitObject = ObjectGenerator.generate("objectGenerator/traits.json");
 		this.patients = new ArrayList<Patient>();
 		this.doctor = new Doctor();
 		this.timer = new Timer(this);

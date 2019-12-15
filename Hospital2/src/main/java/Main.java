@@ -4,15 +4,16 @@ import java.util.ArrayList;
 
 import hospital.World;
 import models.ContainerObject;
+import models.Disease2;
 import models.ObjectGenerator;
+import models.PatientObjectParameter;
 
 public class Main {
 	public static void main(String[] args) throws InterruptedException {
 		//World world = new World();
 		
 		//world.start();
-		//ContainerObject t = new ContainerObject("objectGenerator/disease.json");
-		ArrayList<ContainerObject> o = ObjectGenerator.generate("objectGenerator/traits.json");
-		System.out.println(o.get(0).getList());
+		ArrayList<ContainerObject> o = ObjectGenerator.generate("objectGenerator/disease.json");
+		System.out.println(o.get(0).getList().get(0).getName());
 	}
 }

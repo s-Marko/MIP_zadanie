@@ -9,17 +9,8 @@ public class ContainerObject {
 
 	private String name;
 	private int totalWeight;
+	private double chance;
 	private ArrayList<PatientObjectParameter> list;
-	
-	public void generate(Object key) {
-		this.list = new ArrayList<PatientObjectParameter>();
-		JSONArray items = (JSONArray) key;
-		for (Object item : items) {
-			PatientObjectParameter ob = Factory.create((JSONObject) item);
-			totalWeight += ob.getWeight();
-			list.add(ob);
-		}
-	}
 	
 	public String getName() {
 		return name;
@@ -32,14 +23,28 @@ public class ContainerObject {
 	public int getTotalWeight() {
 		return totalWeight;
 	}
+
+	public double getChance() {
+		return chance;
+	}
 	
 	public ArrayList<PatientObjectParameter> getList() {
 		return list;
+	}	
+
+	public void generate() {
+		
 	}
 	
-	
-
-	public ContainerObject(Object key) {
-		generate(key);
+	public ContainerObject(JSONObject key) {
+		this.list = new ArrayList<PatientObjectParameter>();
+		this.chance = (double) key.get("chance");
+		
+		JSONArray content = (JSONArray) key.get("content");
+		for (Object item : content) {
+			PatientObjectParameter ob = Factory.create((JSONObject) item);
+			totalWeight += ob.getWeight();
+			list.add(ob);
+		}
 	}
 }

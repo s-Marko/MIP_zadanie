@@ -22,10 +22,12 @@ public class ObjectGenerator {
             JSONObject json = (JSONObject) parser.parse(reader);
             for ( Iterator<?> iterator = json.keySet().iterator(); iterator.hasNext(); ) {
             	String key = (String) iterator.next();
-            	JSONArray items = (JSONArray) json.get(key);
+
+            	JSONObject items = (JSONObject) json.get(key);
+            	
             	ContainerObject ob = new ContainerObject( items );
             	ob.setName(key);
-            	ret.add( ob );
+            	ret.add(ob);
             }
 		}
 		
