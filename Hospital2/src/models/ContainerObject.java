@@ -1,6 +1,7 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -32,8 +33,19 @@ public class ContainerObject {
 		return list;
 	}	
 
-	public void generate() {
-		
+	public PatientObjectParameter generate() {
+		Random rand = new Random();
+		if (rand.nextDouble() <= this.chance) {
+			int r = rand.nextInt(totalWeight);
+			int countWeight = 0;
+			for (PatientObjectParameter ob : this.list) {
+				countWeight = ob.getWeight();
+				if (r > ob.weight)
+					return ob;
+			}
+		}
+		// if something fails default to first element
+		return this.list.get(0);
 	}
 	
 	public ContainerObject(JSONObject key) {

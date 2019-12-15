@@ -33,8 +33,7 @@ public class ObjectGenerator {
 		
 		catch (Exception e) {
 			e.printStackTrace();
-		}
-		
+		}		
 		
 		return ret;
 	}

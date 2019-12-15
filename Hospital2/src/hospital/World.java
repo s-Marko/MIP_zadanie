@@ -7,9 +7,9 @@ import java.util.Random;
 import java.util.Scanner;
 
 import models.ContainerObject;
-import models.Disease;
+import models.DiseaseOld;
 import models.ObjectGenerator;
-import models.Trait;
+import models.TraitOld;
 
 public class World extends Thread{
 	private ArrayList<Patient> patients = new ArrayList<>();
@@ -50,7 +50,7 @@ public class World extends Thread{
 	}
 	
 	public void addPatient() {
-		this.patients.add(Patient.generatePatient(getDiseaseObject(), getTraitObject()));
+		this.patients.add(new Patient(getDiseaseObject().get(0), getTraitObject()));
 	}
 	
 	private void removePatient(Patient patient) {

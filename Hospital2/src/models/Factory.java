@@ -8,10 +8,10 @@ public class Factory {
 		PatientObjectParameter ob = null;
 		
 		if (item.containsKey("symptoms")) { 
-			ob = new Disease2(); 
+			ob = new Disease(); 
 		}
 		else { 
-			ob = new Trait2(); 
+			ob = new Trait(); 
 		}
 		
 		ob.setParameters(item);		

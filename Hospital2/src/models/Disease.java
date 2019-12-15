@@ -1,60 +1,39 @@
 package models;
 
-import java.io.FileReader;
-import java.io.Reader;
 import java.util.ArrayList;
-import java.util.Random;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 
-
-public class Disease {
-    private String name;
-    private int weight;
-    private int combinedWeight = 0;
-    private ArrayList<Disease> diseases = new ArrayList<Disease>();
-
-
-    public Disease generateDisease() {
-        Random random = new Random();
-        int r = random.nextInt(combinedWeight);
-        for (Disease disease: diseases) {
-            if (r > disease.weight)
-                return disease;
-        }
-        return diseases.get(0);
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    //// Main constructor, reads information from external JSON file and generates Objects into private arrayList. 
+public class Disease extends PatientObjectParameter{
+	
+	private ArrayList<String> symptoms;
+	private ArrayList<String> messages;
+	
     public Disease() {
-    	JSONParser parser = new JSONParser();
-        try {
-            Reader reader = new FileReader("objectGenerator/disease.json");
-            JSONObject json = (JSONObject) parser.parse(reader);
-            JSONArray diseaseJson = (JSONArray) json.get("disease");
-            for (Object value : diseaseJson) {
-            	JSONObject o = (JSONObject) value;
-            	int oWeight = ((Long)o.get("weight")).intValue();
-            	diseases.add(new Disease( (String)o.get("name"), oWeight ) );
-            	combinedWeight += oWeight;
-            }
-            
-          
-
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    	super();
     }
+    
+    
+	public ArrayList<String> getSymptoms() { return symptoms; }
+	public ArrayList<String> getMessages() { return messages; }
+	
+	@Override
+	public void setParameters(JSONObject item) {
+		
+		JSONArray messages = (JSONArray) item.get("messages");
+		JSONArray symptoms = (JSONArray) item.get("symptoms");
 
-    private Disease(String name, int weight) {
-        this.name = name;
-        this.weight = weight;
-    }
+		ArrayList<String> messagesList = new ArrayList<>();
+		ArrayList<String> symptomsList = new ArrayList<>();
+		
+		for (Object message : messages) { messagesList.add((String) message); }		
+		for (Object symptom : symptoms) { symptomsList.add((String) symptom); }		
+		
+		this.name = (String )item.get("name");
+		this.weight = ( (Long) item.get("weight") ).intValue();
+		this.messages = messagesList;
+		this.symptoms = symptomsList;
+	}
+    
 }

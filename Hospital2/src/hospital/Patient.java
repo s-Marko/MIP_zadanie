@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import models.ContainerObject;
+import models.DiseaseOld;
 import models.Disease;
+import models.PatientObjectParameter;
+import models.TraitOld;
 import models.Trait;
 
 public class Patient extends Person{
@@ -21,7 +24,7 @@ public class Patient extends Person{
     private int generateHealth() {
         int health = 80;
         if (!this.getTraits().isEmpty()) {
-            ArrayList<Trait> tr= this.getTraits();
+            ArrayList<Trait> tr = this.getTraits();
             for (Trait trait : tr) {
                 health += trait.getModifier();
             }
@@ -47,14 +50,24 @@ public class Patient extends Person{
     }
     
     public static Patient generatePatient(ArrayList<ContainerObject> diseaseObject, ArrayList<ContainerObject> traitObject) {
-        //return new Patient(generateAge(), containerObject.generateDisease(), traitObject.generateTraits());
-    	return null;
+    	for (ContainerObject tr : traitObject) {
+    		if (tr != null) {
+    			
+    		}
+    	}
+        return null;
     }
     
-    private Patient(int age, Disease disease, ArrayList<Trait> traits) {
+    public Patient(ContainerObject containerObject, ArrayList<ContainerObject> traitObject) {
         super(generateAge());
-        this.disease = disease;
-        this.traits = traits;
+        this.traits = new ArrayList<Trait>();
+        for (ContainerObject tr : traitObject) {
+        	Trait t = (Trait) tr.generate();
+        	if (t != null) { this.traits.add(t); }
+    	}
+        
+        this.disease = (Disease) containerObject.generate();
+        
         this.health = generateHealth();
     }
 	@Override
