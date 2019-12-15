@@ -9,6 +9,7 @@ public class Day {
 	public Day nextDay() {
 		return this.nextDay;
 	}
+	
 	public void setNextDay(Day day) {
 		this.nextDay = day;
 	}
