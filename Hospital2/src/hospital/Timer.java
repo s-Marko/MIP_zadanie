@@ -36,7 +36,6 @@ public class Timer extends Thread{
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			//System.out.println(this.time);
 			this.time -= this.interval;
 		}
 		System.out.println("The day is ending.");
