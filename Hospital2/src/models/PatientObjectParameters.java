@@ -12,4 +12,8 @@ public abstract class PatientObjectParameters {
 	public int getWeight() {
 		return weight;
 	}
+	
+	public static void setParameters(Object json) {
+		
+	}
 }

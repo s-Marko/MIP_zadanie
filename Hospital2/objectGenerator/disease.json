@@ -3,7 +3,7 @@
     {
       "name": "Common cold",
       "weight": 50,
-      "symptomps": [
+      "symptoms": [
         "Fever",
         "Fatigue",
         "Headache",
@@ -16,15 +16,27 @@
     },
     {
       "name": "Inflamed tonsils",
-      "weight": 15
+      "weight": 15,
+      "symptoms": [
+      ],
+      "messages": [
+      ]
     },
     {
       "name": "Chicken pox",
-      "weight": 10
+      "weight": 10,
+      "symptoms": [
+      ],
+      "messages": [
+      ]
     },
     {
       "name": "Hepatitis",
-      "weight": 5
+      "weight": 5,
+      "symptoms": [
+      ],
+      "messages": [
+      ]
     }
   ]
 }
