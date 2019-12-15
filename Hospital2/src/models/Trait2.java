@@ -2,30 +2,23 @@ package models;
 
 import org.json.simple.JSONObject;
 
-public class Trait2 extends PatientObjectParameters{
+public class Trait2 extends PatientObjectParameter{
 	
+	public Trait2() {
+		super();
+	}
+
 	private int modifier;
-	
-    private Trait2(String name, int weight, int modifier) {
-        this.name = name;
-        this.weight = weight;
-        this.modifier = modifier;
-    }
     
     public int getModifier() {
     	return modifier;
     }
     
-    
-	public static Trait2 setParameters(JSONObject item) {		
-		
-		Trait2 returnObject = new Trait2(
-				(String )item.get("name"),
-				( (Long) item.get("weight") ).intValue(),
-				( (Long) item.get("modifier") ).intValue()
-				);
-		
-		return returnObject;
-	}
+    @Override
+    public void setParameters(JSONObject item) {
+        this.name = (String )item.get("name");
+        this.weight = ( (Long) item.get("weight") ).intValue();
+        this.modifier = ( (Long) item.get("modifier") ).intValue();
+    }
     
 }

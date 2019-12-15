@@ -1,5 +1,7 @@
 package main.java;
 
+import java.util.ArrayList;
+
 import hospital.World;
 import models.ContainerObject;
 import models.ObjectGenerator;
@@ -9,7 +11,8 @@ public class Main {
 		//World world = new World();
 		
 		//world.start();
-		ObjectGenerator.generate("objectGenerator/traits.json", new String[]{"test", "test2"});
 		//ContainerObject t = new ContainerObject("objectGenerator/disease.json");
+		ArrayList<ContainerObject> o = ObjectGenerator.generate("objectGenerator/traits.json");
+		System.out.println(o.get(0).getList());
 	}
 }

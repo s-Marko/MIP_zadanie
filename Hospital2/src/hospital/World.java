@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
+import models.ContainerObject;
 import models.Disease;
 import models.Trait;
 
@@ -13,7 +14,7 @@ public class World extends Thread{
 	private ArrayList<Patient> patients = new ArrayList<>();
 	private Patient activePatient;
 	private Doctor doctor;
-	private Disease diseaseObject;
+	private ContainerObject diseaseObject;
 	private Trait traitObject;
 	
 	boolean running = true;
@@ -35,7 +36,7 @@ public class World extends Thread{
 		return this.patients;
 	}
 	
-	public Disease getDiseaseObject() {
+	public ContainerObject getDiseaseObject() {
 		return this.diseaseObject;
 	}
 	
@@ -111,7 +112,7 @@ public class World extends Thread{
 	
 	public World() {
 		initializeWeek();
-		this.diseaseObject = new Disease();
+		//this.diseaseObject = new ContainerObject();
 		this.traitObject = new Trait();
 		this.patients = new ArrayList<Patient>();
 		this.doctor = new Doctor();

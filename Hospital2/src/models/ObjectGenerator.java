@@ -12,9 +12,10 @@ import java.util.Iterator;
 
 public class ObjectGenerator {
 	
-	public static ArrayList<Object> generate(String filePath, String[] args ) {
+	public static ArrayList<ContainerObject> generate(String filePath) {
 		
 		JSONParser parser = new JSONParser();
+		ArrayList<ContainerObject> ret = new ArrayList<>();
 		
 		try {
 			Reader reader = new FileReader(filePath);
@@ -22,12 +23,9 @@ public class ObjectGenerator {
             for ( Iterator<?> iterator = json.keySet().iterator(); iterator.hasNext(); ) {
             	String key = (String) iterator.next();
             	JSONArray items = (JSONArray) json.get(key);
-            	System.out.println(key);
-            	for ( Object item : items ) {
-            		JSONObject t = (JSONObject) item;
-            		
-            	}
-            	
+            	ContainerObject ob = new ContainerObject( items );
+            	ob.setName(key);
+            	ret.add( ob );
             }
 		}
 		
@@ -36,7 +34,7 @@ public class ObjectGenerator {
 		}
 		
 		
-		return null;
+		return ret;
 	}
 	
 }

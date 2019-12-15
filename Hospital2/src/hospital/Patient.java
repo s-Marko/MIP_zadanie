@@ -3,6 +3,7 @@ package hospital;
 import java.util.ArrayList;
 import java.util.Random;
 
+import models.ContainerObject;
 import models.Disease;
 import models.Trait;
 
@@ -45,8 +46,9 @@ public class Patient extends Person{
         return (int)Math.floor(age);
     }
     
-    public static Patient generatePatient(Disease diseaseObject, Trait traitObject) {
-        return new Patient(generateAge(), diseaseObject.generateDisease(), traitObject.generateTraits());        
+    public static Patient generatePatient(ContainerObject containerObject, Trait traitObject) {
+        //return new Patient(generateAge(), containerObject.generateDisease(), traitObject.generateTraits());
+    	return null;
     }
     
     private Patient(int age, Disease disease, ArrayList<Trait> traits) {
