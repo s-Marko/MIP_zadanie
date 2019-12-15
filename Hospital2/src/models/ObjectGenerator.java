@@ -10,6 +10,7 @@ import java.util.Iterator;
 
 
 public class ObjectGenerator {
+	// generates list of objects from files
 	
 	public static ArrayList<ContainerObject> generate(String filePath) {
 		

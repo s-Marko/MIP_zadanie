@@ -50,15 +50,6 @@ public class Patient extends Person{
         return (int)Math.floor(age);
     }
     
-    public static Patient generatePatient(ArrayList<ContainerObject> diseaseObject, ArrayList<ContainerObject> traitObject) {
-    	for (ContainerObject tr : traitObject) {
-    		if (tr != null) {
-    			
-    		}
-    	}
-        return null;
-    }
-    
     public Patient(ContainerObject containerObject, ArrayList<ContainerObject> traitObject) {
         super(generateAge());
         this.traits = new ArrayList<Trait>();

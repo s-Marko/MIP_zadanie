@@ -10,7 +10,7 @@ public class ContainerObject {
 
 	private String name;
 	private int totalWeight;
-	private double chance;
+	private double chance;	// chance of generating an object in case of traits
 	private ArrayList<PatientObjectParameter> list;
 	
 	public String getName() {
@@ -45,7 +45,7 @@ public class ContainerObject {
 					return ob;
 			}
 		}
-		// if something fails default to first element
+		// if something fails, defaults to first element
 		return this.list.get(0);
 	}
 	

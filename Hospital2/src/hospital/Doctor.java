@@ -11,6 +11,7 @@ public class Doctor extends Person implements Diagnose{
 	}
 	
 	public void diagnose(Patient patient) throws InterruptedException {
+		// TODO: rework with messages and symptoms from json files
 		Random random = new Random();
 		Event.fireEvent("Doctor is starting to diagnose " + patient.getName() + ".");
 		Event.fireEvent(patient.getName() + " is diagnosed with " + patient.getDisease().getName() + ".");
