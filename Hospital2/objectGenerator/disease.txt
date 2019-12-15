@@ -1,4 +1,0 @@
-Common cold,50
-Inflamed tonsils,15
-Chicken pox,10
-Hepatitis,5
