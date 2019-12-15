@@ -3,25 +3,18 @@ package models;
 public abstract class CotainerObject {
 
 	private String name;
-	private int weight;
-	private int modifier;	
+	private int totalWeight;
 	
 	
 	
 	public String getName() {
 		return name;
 	}	
-	
 
-	public int getModifier() {
-		return modifier;
+	public int getTotalWeight() {
+		return totalWeight;
 	}
-	
 
-	public int getWeight() {
-		return weight;
-	}
-	
 
 	public static void ContainerObject() {
 		
