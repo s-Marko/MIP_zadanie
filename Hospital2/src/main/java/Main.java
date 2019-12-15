@@ -9,7 +9,7 @@ public class Main {
 		//World world = new World();
 		
 		//world.start();
-		//ObjectGenerator.generate("objectGenerator/traits.json", new String[]{"test", "test2"});
-		ContainerObject t = new ContainerObject("objectGenerator/disease.json");
+		ObjectGenerator.generate("objectGenerator/traits.json", new String[]{"test", "test2"});
+		//ContainerObject t = new ContainerObject("objectGenerator/disease.json");
 	}
 }

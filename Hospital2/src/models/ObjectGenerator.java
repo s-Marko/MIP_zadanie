@@ -22,14 +22,10 @@ public class ObjectGenerator {
             for ( Iterator<?> iterator = json.keySet().iterator(); iterator.hasNext(); ) {
             	String key = (String) iterator.next();
             	JSONArray items = (JSONArray) json.get(key);
-            	System.out.println(items);
+            	System.out.println(key);
             	for ( Object item : items ) {
             		JSONObject t = (JSONObject) item;
-            		for ( Iterator<?> iteratorNested = t.keySet().iterator(); iteratorNested.hasNext(); ) {
-            			String k = (String) iteratorNested.next();
-            			System.out.println( k );
-            			System.out.println(t.get(k));
-            		}
+            		
             	}
             	
             }
