@@ -10,29 +10,33 @@ public class Patient extends Person{
 	
 	private ArrayList<Trait> traits;
     private Disease disease;
+    // currently unused variable
+    // TODO: implent a use
     private int health;
     
     public Disease getDisease() { return this.disease; }
     public ArrayList<Trait> getTraits() { return this.traits; }
     public int getHealth() { return this.health; }
     
-    
+
     private int generateHealth() {
         int health = 80;
         if (!this.getTraits().isEmpty()) {
-            ArrayList<Trait> tr= this.getTraits();
-            for (Trait trait : tr) {
+            ArrayList<Trait> traitList = this.getTraits();
+            for (Trait trait : traitList) {
                 health += trait.getModifier();
             }
         }
         return health;
     }
 
+    // inverse CDF if exponential distrubution
     private static double inverseCDF(double rand) {
-        int mean = 35;
+        int mean = 35;  // mean of generated values
         return -mean* Math.log(rand);
     }
 
+    // generates age based on exponential distrubution
     private static int generateAge() {
         Random random = new Random();
         int min = 19;

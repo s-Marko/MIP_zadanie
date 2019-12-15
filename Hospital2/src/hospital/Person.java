@@ -40,9 +40,9 @@ abstract class Person {
         this.firstName = faker.name().firstName();
         this.lastName = faker.name().lastName();
         if (random.nextDouble() > 0.950)
+			// generates middle name with a 1/20 chance
             this.middleName = faker.name().firstName();
         this.age = age;
     }
-	
 	
 }
