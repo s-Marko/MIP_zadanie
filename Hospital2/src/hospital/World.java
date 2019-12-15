@@ -7,9 +7,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 import models.ContainerObject;
-import models.DiseaseOld;
 import models.ObjectGenerator;
-import models.TraitOld;
 
 public class World extends Thread{
 	private ArrayList<Patient> patients = new ArrayList<>();

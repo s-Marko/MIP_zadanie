@@ -4,10 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import models.ContainerObject;
-import models.DiseaseOld;
 import models.Disease;
-import models.PatientObjectParameter;
-import models.TraitOld;
 import models.Trait;
 
 public class Patient extends Person{
@@ -66,10 +63,10 @@ public class Patient extends Person{
         	if (t != null) { this.traits.add(t); }
     	}
         
-        this.disease = (Disease) containerObject.generate();
-        
+        this.disease = (Disease) containerObject.generate();        
         this.health = generateHealth();
     }
+    
 	@Override
 	public void interact(Object o) {
 		/// this method should never get called

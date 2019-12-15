@@ -31,8 +31,9 @@ public class ContainerObject {
 	
 	public ArrayList<PatientObjectParameter> getList() {
 		return list;
-	}	
+	}
 
+	@SuppressWarnings("unused")
 	public PatientObjectParameter generate() {
 		Random rand = new Random();
 		if (rand.nextDouble() <= this.chance) {
