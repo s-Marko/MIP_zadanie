@@ -3,6 +3,7 @@ package hospital;
 import java.util.ArrayList;
 import java.util.Random;
 
+import models.ContainerObject;
 import models.Disease;
 import models.Trait;
 
@@ -22,8 +23,8 @@ public class Patient extends Person{
     private int generateHealth() {
         int health = 80;
         if (!this.getTraits().isEmpty()) {
-            ArrayList<Trait> traitList = this.getTraits();
-            for (Trait trait : traitList) {
+            ArrayList<Trait> tr = this.getTraits();
+            for (Trait trait : tr) {
                 health += trait.getModifier();
             }
         }
@@ -49,16 +50,27 @@ public class Patient extends Person{
         return (int)Math.floor(age);
     }
     
-    public static Patient generatePatient(Disease diseaseObject, Trait traitObject) {
-        return new Patient(generateAge(), diseaseObject.generateDisease(), traitObject.generateTraits());        
+    public static Patient generatePatient(ArrayList<ContainerObject> diseaseObject, ArrayList<ContainerObject> traitObject) {
+    	for (ContainerObject tr : traitObject) {
+    		if (tr != null) {
+    			
+    		}
+    	}
+        return null;
     }
     
-    private Patient(int age, Disease disease, ArrayList<Trait> traits) {
+    public Patient(ContainerObject containerObject, ArrayList<ContainerObject> traitObject) {
         super(generateAge());
-        this.disease = disease;
-        this.traits = traits;
+        this.traits = new ArrayList<Trait>();
+        for (ContainerObject tr : traitObject) {
+        	Trait t = (Trait) tr.generate();
+        	if (t != null) { this.traits.add(t); }
+    	}
+        
+        this.disease = (Disease) containerObject.generate();        
         this.health = generateHealth();
     }
+    
 	@Override
 	public void interact(Object o) {
 		/// this method should never get called

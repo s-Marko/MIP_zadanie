@@ -1,5 +1,6 @@
 package main.java;
 
+
 import hospital.World;
 
 public class Main {
@@ -7,6 +8,5 @@ public class Main {
 		World world = new World();
 		
 		world.start();
-		
-	}	
+	}
 }
