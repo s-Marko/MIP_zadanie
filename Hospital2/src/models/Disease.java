@@ -39,15 +39,12 @@ public class Disease {
             JSONObject json = (JSONObject) parser.parse(reader);
             JSONArray diseaseJson = (JSONArray) json.get("disease");
             for (Object value : diseaseJson) {
-            	JSONObject o = (JSONObject) value;
-            	int oWeight = ((Long)o.get("weight")).intValue();
-            	diseases.add(new Disease( (String)o.get("name"), oWeight ) );
-            	combinedWeight += oWeight;
-            }
+            	JSONObject valueInstance = (JSONObject) value;
+            	int valueInstanceWeight = ((Long)o.get("weight")).intValue();
+            	diseases.add(new Disease( (String)o.get("name"), valueInstanceWeight ) );
+            	combinedWeight += valueInstanceWeight;
+            } 
             
-          
-
-
         } catch (Exception e) {
             e.printStackTrace();
         }

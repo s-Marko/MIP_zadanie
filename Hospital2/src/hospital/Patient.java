@@ -20,8 +20,8 @@ public class Patient extends Person{
     private int generateHealth() {
         int health = 80;
         if (!this.getTraits().isEmpty()) {
-            ArrayList<Trait> tr= this.getTraits();
-            for (Trait trait : tr) {
+            ArrayList<Trait> traitList = this.getTraits();
+            for (Trait trait : traitList) {
                 health += trait.getModifier();
             }
         }
