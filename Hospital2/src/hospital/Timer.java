@@ -6,6 +6,7 @@ public class Timer extends Thread{
 	private int interval;
 	private int time;
 	private boolean run = false;
+	@SuppressWarnings("unused")
 	private World world;
 	
 	public synchronized boolean isRunning() {

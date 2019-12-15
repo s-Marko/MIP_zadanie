@@ -6,15 +6,15 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-import models.Disease;
-import models.Trait;
+import models.ContainerObject;
+import models.ObjectGenerator;
 
 public class World extends Thread{
 	private ArrayList<Patient> patients = new ArrayList<>();
 	private Patient activePatient;
 	private Doctor doctor;
-	private Disease diseaseObject;
-	private Trait traitObject;
+	private ArrayList<ContainerObject> diseaseObject;
+	private ArrayList<ContainerObject> traitObject;
 	
 	boolean running = true;
 	
@@ -35,11 +35,11 @@ public class World extends Thread{
 		return this.patients;
 	}
 	
-	public Disease getDiseaseObject() {
+	public ArrayList<ContainerObject> getDiseaseObject() {
 		return this.diseaseObject;
 	}
 	
-	public Trait getTraitObject() {
+	public ArrayList<ContainerObject> getTraitObject() {
 		return this.traitObject;
 	}
 	
@@ -48,7 +48,7 @@ public class World extends Thread{
 	}
 	
 	public void addPatient() {
-		this.patients.add(Patient.generatePatient(getDiseaseObject(), getTraitObject()));
+		this.patients.add(new Patient(getDiseaseObject().get(0), getTraitObject()));
 	}
 	
 	private void removePatient(Patient patient) {
@@ -111,8 +111,8 @@ public class World extends Thread{
 	
 	public World() {
 		initializeWeek();
-		this.diseaseObject = new Disease();
-		this.traitObject = new Trait();
+		this.diseaseObject = ObjectGenerator.generate("objectGenerator/disease.json");
+		this.traitObject = ObjectGenerator.generate("objectGenerator/traits.json");
 		this.patients = new ArrayList<Patient>();
 		this.doctor = new Doctor();
 		this.timer = new Timer(this);
