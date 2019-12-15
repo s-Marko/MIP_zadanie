@@ -1,36 +1,42 @@
 {
-  "smoke": [
-    {
-      "name": "Smokes",
-      "modifier": -10,
-      "weight": 20
-    },
-    {
-      "name": "Heavy smoker",
-      "modifier": -15,
-      "weight": 10
-    },
-    {
-      "name": "Occasionally smokes",
-      "modifier": -5,
-      "weight": 25
-    }
-  ],
-  "exercise": [
-    {
-      "name": "Exercises rarely",
-      "modifier": 5,
-      "weight": 5
-    },
-    {
-      "name": "Exercises",
-      "modifier": 10,
-      "weight": 20
-    },
-    {
-      "name": "Exercises often",
-      "modifier": 15,
-      "weight": 15
-    }
-  ]
+  "smoke": {
+    "chance": 0.5,
+    "content": [
+      {
+        "name": "Smokes",
+        "modifier": -10,
+        "weight": 20
+      },
+      {
+        "name": "Heavy smoker",
+        "modifier": -15,
+        "weight": 10
+      },
+      {
+        "name": "Occasionally smokes",
+        "modifier": -5,
+        "weight": 25
+      }
+    ]    
+  },
+  "exercise": {
+    "chance": 0.5,
+    "content": [
+      {
+        "name": "Exercises rarely",
+        "modifier": 5,
+        "weight": 5
+      },
+      {
+        "name": "Exercises",
+        "modifier": 10,
+        "weight": 20
+      },
+      {
+        "name": "Exercises often",
+        "modifier": 15,
+        "weight": 15
+      }
+    ]    
+  }
 }
